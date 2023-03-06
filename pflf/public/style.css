@@ -1,0 +1,253 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito';
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    overflow-x: hidden;
+    background-image: url("images/background.jpg");
+}
+
+a {
+    color: #000;
+    text-align: center;
+    text-decoration: none;
+}
+/* Стиль для размытия фона при открытии модального окна */
+.blur-element {
+    filter: blur(3px);
+}
+/* Стиль для выравнивания по центру */
+.aligncenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* Основной контейнер */
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 950px;
+    height: 100%;
+    backdrop-filter: blur(3px);
+
+    border-left: 1px solid #eee;
+    border-right: 1px solid #eee;
+}
+/* Шапка сайта */
+.header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5em 1.5em;
+    
+    background: #f07da9;
+    box-shadow:  20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+}
+/* Лого */
+.header .logo {
+    display: inline-flex;
+    align-items: center;
+}
+/* Изображение лого */
+.header img {
+    width: 4em;
+    height: 4em;
+}
+/* Наименование лого */
+.header .logoname {
+    margin-left: 0.5em;
+    font-size: 2em;
+    font-weight: bold;
+    text-shadow: 2px 7px 6px rgba(255, 255, 255, 0.3), 
+    0px -4px 10px rgba(223, 223, 223, 0.3);
+}
+/* Список с ссылками */
+.header ul {
+    display: inline-flex;
+    list-style-type: none;
+}
+.header ul li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 1em;
+}
+/* У последнего элемента списка выставляем больший отступ */
+.header ul li:nth-last-child(1) {
+    margin-left: 4em;
+}
+/* Основное окно с сообщениями */
+.chat-box {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 85%;
+    overflow: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.chat-box::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+
+.chat-box .message {
+    display: flex;
+    padding: 0.5em 1em;
+
+}
+
+.chat-box .message div {
+    min-width: 120px;
+    max-width: 80%;
+    padding: 4px 8px;
+    /* background-color: #fff; */
+    border-radius: 10px;
+    padding: 4px 8px;
+    color:#99007f;
+
+}
+
+.chat-box .message.me-message {
+    justify-content: flex-end;
+}
+
+.chat-box .message.other-message {
+    justify-content: flex-start;
+}
+
+.chat-box .message .name {
+    width: 100%;
+    color: #777;
+    font-size: 0.8em;
+}
+
+.chat-box .message .text {
+    width: 100%;
+    word-wrap: break-word;
+}
+
+.chat-box .update {
+    text-align: center;
+    padding: 0.5em;
+    font-style: italic;
+}
+
+/* Стили для нижнего меню с кнопками и текстовым полем */
+.chat_input-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5em 0.8em;
+}
+/* Общий стиль для кнопок */
+.chat_input-box .chat-btn {
+    width: 8%;
+    max-width: 40px;
+    aspect-ratio: 1/1;
+    border: 0;
+    margin: 0 2px;
+    background-color: transparent;
+}
+/* Растягиваем svg на ширину всей кнопки */
+.chat_input-box .chat-btn svg {
+    width: 100%;
+    height: 100%;
+}
+/* Стиль для текстового поля с сообщением */
+.chat_input-box textarea {
+    display: flex;
+    border: 1px solid #eee;
+    width: 95%;
+    height: 90%;
+    padding: 8px 10px;
+    margin: 0 4px;
+    border-radius: 20px;
+    font-size: 1em;
+    outline: 0;
+    resize: none;
+    overflow: hidden;
+}
+
+/* Окно для авторизации */
+.join-screen {
+    display: block;
+    position: absolute;
+    width: 90%;
+    max-width: 600px;
+    padding: 1em;
+    border: 1px solid;
+    border-radius: 5px;
+    z-index: 999;
+    overflow: hidden;
+    background-color: #ffffff;
+}
+/* Линия под заголовком */
+.join-screen h1 {
+    border-bottom: 2px solid #ffffff;
+}
+/* Стиль для поля */
+.join-screen input[type=text] {
+    float: left;
+    outline: 0;
+    border: 2px solid #ffffff;
+    width: 70%;
+    padding: 10px 15px;
+    border-radius: 20px;
+    font-size: 1em;
+    background-color: #f3bbee;
+}
+/* Стиль для кнопки JOIN */
+.join-screen #join-chat-btn {
+    float: right;
+    outline: 0;
+    border: 2px solid #fdfff5;
+    width: 20%;
+    padding: 10px 15px;
+    border-radius: 20px;
+    font-size: 1em;
+    font-weight: bold;
+    overflow: hidden;
+    background-color: #ff71d4;
+}
+
+
+@media screen and (max-width: 800px) {
+    .header ul {
+        display: none;
+    }
+}
+
+.smile {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.smiles {
+    bottom: 0;
+    height: 30px;
+    left: 0;
+    outline: none;
+    padding-left: 10px;
+    position: absolute;
+    right: 0;
+    bottom: 60px;
+    width: 100%;
+}
